@@ -55,10 +55,10 @@
 //!         const int *cp1 = &i, *cp2 = &j;
 //!             (a) f1(p1, p2);     T is *int
 //!             (b) f2(p1, p2);     T1 and T2 are also *int
-//!             (c) f1(cp1, cp2);   const is ignored
-//!             (d) f2(cp1, cp2);   T1 and T2 are also *int,const is ignored
+//!             (c) f1(cp1, cp2);   const is NOT ignored \\const is NOT ignored, the type passed to T is (const int *), so you won't be able to change variable through *pointer
+//!             (d) f2(cp1, cp2);   T1 and T2 are also *int,const is NOT ignored
 //!             (e) f1(p1, cp1);    didn't compile since two types are different int* and const int* respectively
-//!             (f) f2(p1, cp1);    Cp1's const is ignored.
+//!             (f) f2(p1, cp1);    different template parameters are deducted: int* and const int *.
 //!
 
 #include <iostream>
