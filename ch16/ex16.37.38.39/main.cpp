@@ -19,7 +19,9 @@
 //! explicit template argument. Explain why that argument is needed and
 //! how it is used.
 //!
-//  without specified type given, make_shared has no possibility to
+//  In the standard library, the first template parameter of make_shared has 
+//  to be supplied explicitly. It cannot be deducted from function arguments. 
+//  Without specified type given, make_shared has no possibility to
 //  to determine how big the size it should allocate, which is the reason.
 //
 //  Depending on the type specified, make_shared allocates proper size of memory
